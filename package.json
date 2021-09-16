@@ -1,0 +1,27 @@
+{
+  "name": "static",
+  "version": "0.0.0-development",
+  "repository": "https://github.com/f-lab-edu/cozy.git",
+  "author": "cozy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-angular": "13.1.0",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/exec": "5.0.0",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/github": "7.2.3",
+    "husky": "7.0.2",
+    "semantic-release": "17.4.7"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  }
+}
