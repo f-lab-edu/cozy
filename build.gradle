@@ -19,6 +19,11 @@ dependencies {
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
     // MySQL connector
     runtimeOnly 'mysql:mysql-connector-java'
+
+    //lombok
+    implementation 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
 }
 
 test {
