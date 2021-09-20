@@ -1,0 +1,15 @@
+# 로컬 개발 환경 설정을 위한 MySQL docker compose 파일
+version: "3.9"
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=cozy
+      - MYSQL_USER=cozy
+      - MYSQL_PASSWORD=1234
+    command:
+      - --character-set-server=utf8
+      - --collation-server=utf8_unicode_ci
