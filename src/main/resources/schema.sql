@@ -9,6 +9,7 @@ create table USER
     phone_number varchar(25)  not null,
     created_at   TIMESTAMP    not null DEFAULT CURRENT_TIMESTAMP,
     deleted_at   TIMESTAMP    null,
+    updated_at   TIMESTAMP    not null DEFAULT CURRENT_TIMESTAMP,
     is_deleted   BOOLEAN      not null DEFAULT false,
 
     PRIMARY KEY (id)
