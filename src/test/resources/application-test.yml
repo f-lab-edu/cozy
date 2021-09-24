@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:log4jdbc:h2:mem:testdb;MODE=MySQL;
+    username: ${H2_USERNAME}
+    password: ${H2_PASSWORD}
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy

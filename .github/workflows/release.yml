@@ -9,18 +9,28 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    environment: develop
     steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-java@v1
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
-          java-version: 11
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: chmod +x script/prepare-release.sh && npx semantic-release
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build package
+        run: npm run build --if-present
+      - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          DEV_MYSQL_URL: ${{ secrets.DEV_MYSQL_URL }}
+          DEV_MYSQL_PORT: ${{ secrets.DEV_MYSQL_PORT }}
+          MYSQL_DATABASE_NAME: ${{ secrets.MYSQL_DATABASE_NAME }}
+          DEV_MYSQL_USERNAME: ${{ secrets.DEV_MYSQL_USERNAME }}
+          DEV_MYSQL_PASSWORD: ${{ secrets.DEV_MYSQL_PASSWORD }}
+          H2_USERNAME: ${H2_USERNAME}
+          H2_PASSWORD: ${H2_PASSWORD}
           HUSKY: 0
+        run: chmod +x script/prepare-release.sh && npx semantic-release
