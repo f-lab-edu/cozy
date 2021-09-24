@@ -12,7 +12,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 /**
  * @ActiveProfiles?
- * 어떤 특정환 환경에 대해 설정 값을 다르게 하고싶을 때 사용할 수 있다.
+ * 어떤 특정한 환경에 대해 설정 값을 다르게 하고싶을 때 사용할 수 있다.
  * 테스트 코드에서 많이 사용하는 어노테이션.
  * value 옵션으로 지정한 값에 해당하는 profile을 이용해 테스트를 수행시킬 수 있다.
  */
