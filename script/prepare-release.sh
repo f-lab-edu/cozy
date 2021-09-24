@@ -13,8 +13,8 @@ chmod +x gradlew
           -MYSQL_DATABASE_NAME=$MYSQL_DATABASE_NAME \
           -DEV_MYSQL_USERNAME=$DEV_MYSQL_USERNAME \
           -DEV_MYSQL_PASSWORD=$DEV_MYSQL_PASSWORD \
-          -H2_USERNAME=H2_USERNAME \
-          -H2_PASSWORD=H2_PASSWORD
+          -H2_USERNAME=$H2_USERNAME \
+          -H2_PASSWORD=$H2_PASSWORD
 
 mkdir release && cp build/libs/*.jar release
 
