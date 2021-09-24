@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//ENG"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cozy.domain.user.mapper.UserMapper">
+  <insert id="createUser">
+    insert into USER (login_id, password, email, phone_number)
+    values (#{loginId}, #{password}, #{email}, #{phoneNumber})
+  </insert>
+
+  <select id="getOneUser" resultType="GetOneUserDto">
+    select login_id, password, email, phone_number
+    from USER
+    WHERE ID = #{id}
+  </select>
+</mapper>

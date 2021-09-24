@@ -1,1 +1,16 @@
+spring:
+  # 데이터 베이스 설정
+  datasource:
+    url: jdbc:mysql://localhost:3306/cozy?serverTimezone=UTC&characterEncoding=UTF-8
+    username: cozy
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # schema.sql 파일을 스프링 부트를 띄울때마다 실행 (always 옵션)
+  sql:
+    init:
+      mode: always
 
+mybatis:
+  # 매퍼 클래스와 xml 파일을 매핑
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.cozy.domain
