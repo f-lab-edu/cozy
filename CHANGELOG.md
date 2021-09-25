@@ -1,5 +1,13 @@
 # Semantic Versioning Changelog
 
+# [1.2.0](https://github.com/f-lab-edu/cozy/compare/v1.1.0...v1.2.0) (2021-09-25)
+
+
+### Features
+
+* mybatis sql 로그 설정 추가 ([a692bf2](https://github.com/f-lab-edu/cozy/commit/a692bf26830b67cdc207e3c9ac21e115ec02b8c4))
+* 개발 DB, 테스트 DB 분리 ([efd688b](https://github.com/f-lab-edu/cozy/commit/efd688bf1efb3613977e8b8f10f743bf145dcc6a))
+
 # [1.1.0](https://github.com/f-lab-edu/cozy/compare/v1.0.0...v1.1.0) (2021-09-24)
 
 
