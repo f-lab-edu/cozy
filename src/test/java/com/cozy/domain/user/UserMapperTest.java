@@ -8,7 +8,21 @@ import com.cozy.domain.user.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
+/**
+ * @ActiveProfiles?
+ * 어떤 특정한 환경에 대해 설정 값을 다르게 하고싶을 때 사용할 수 있다.
+ * 테스트 코드에서 많이 사용하는 어노테이션.
+ * value 옵션으로 지정한 값에 해당하는 profile을 이용해 테스트를 수행시킬 수 있다.
+ *
+ * @SpringBootTest?
+ * @SpringBootTest는 테스트에 사용할 ApplicationContext를 생성하고 빈들을 불러오는 역할을 수행한다.
+ * @SpringBootTest를 별다른 옵션을 지정하지 않고 이용하면 해당 애플리케이션 상에 정의된 모든 빈을 ApplicationContext로 불러온다.
+ * 또한, classes 옵션을 이용해 빈을 생성할 @Configuration 클래스를 직접 지정할 수도 있다.
+ */
+
+@ActiveProfiles("test")
 @SpringBootTest
 class UserMapperTest {
 

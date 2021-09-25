@@ -1,10 +1,7 @@
 spring:
-  # 데이터 베이스 설정
-  datasource:
-    url: jdbc:mysql://localhost:3306/cozy?serverTimezone=UTC&characterEncoding=UTF-8
-    username: cozy
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: local   # 아무 profile도 지정 안하면 local
+
   # schema.sql 파일을 스프링 부트를 띄울때마다 실행 (always 옵션)
   sql:
     init:
@@ -14,3 +11,25 @@ mybatis:
   # 매퍼 클래스와 xml 파일을 매핑
   mapper-locations: mapper/*.xml
   type-aliases-package: com.cozy.domain
+
+--- # local, dev 환경
+spring:
+  config:
+    activate:
+      on-profile: [ local, dev ]
+  datasource:
+    url: jdbc:log4jdbc:mysql://${DEV_MYSQL_URL}:${DEV_MYSQL_PORT}/${MYSQL_DATABASE_NAME}?serverTimezone=UTC&characterEncoding=UTF-8
+    username: ${DEV_MYSQL_USERNAME}
+    password: ${DEV_MYSQL_PASSWORD}
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+--- # prod 환경
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:log4jdbc:mysql://${PROD_MYSQL_URL}:${PROD_MYSQL_PORT}/${MYSQL_DATABASE_NAME}?serverTimezone=UTC&characterEncoding=UTF-8
+    username: ${PROD_MYSQL_USERNAME}
+    password: ${PROD_MYSQL_PASSWORD}
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
