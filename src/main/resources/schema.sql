@@ -4,7 +4,7 @@ create table USER
 (
     id           bigint       not null auto_increment,
     login_id     varchar(25)  not null,
-    password     varchar(25)  not null,
+    password     varchar(100)  not null,
     email        varchar(100) not null,
     phone_number varchar(25)  not null,
     created_at   TIMESTAMP    not null DEFAULT CURRENT_TIMESTAMP,
