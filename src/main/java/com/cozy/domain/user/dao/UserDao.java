@@ -1,10 +1,12 @@
 package com.cozy.domain.user.dao;
 
-import com.cozy.domain.user.dto.CreateUserDto;
-import com.cozy.domain.user.dto.GetOneUserDto;
+import com.cozy.domain.user.User;
 
 public interface UserDao {
-    Long createUser(CreateUserDto createUserDto);
 
-    GetOneUserDto getOneUser(Long id);
+  void createUser(User user);
+
+  String getEmail(String email);
+
+  String getLoginId(String userId);
 }

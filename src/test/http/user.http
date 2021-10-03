@@ -1,0 +1,10 @@
+# 회원가입 api
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "loginId": "cozy",
+  "password": "123451!",
+  "email": "cozy@gmail.com",
+  "phoneNumber": "01053212234"
+}
