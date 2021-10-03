@@ -1,7 +1,11 @@
 package com.cozy.domain.user;
 
 import java.time.LocalDateTime;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.Value;
+import org.apache.ibatis.type.Alias;
 
 /**
  * @Value?
@@ -10,6 +14,9 @@ import lombok.Value;
  * 그리고 @AllArgConstructor, @ToString, @EqualsAndHashCode 어노테이션을 가지고 있다.
  */
 @Value
+@Alias("User")
+@Builder
+@ToString
 public class User {
 
   Long id;
@@ -21,4 +28,5 @@ public class User {
   LocalDateTime deletedAt;
   LocalDateTime updatedAt;
   Boolean isDeleted;
+
 }

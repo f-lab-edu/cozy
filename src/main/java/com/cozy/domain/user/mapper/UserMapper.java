@@ -1,13 +1,17 @@
 package com.cozy.domain.user.mapper;
 
-import com.cozy.domain.user.dto.CreateUserDto;
-import com.cozy.domain.user.dto.GetOneUserDto;
+import com.cozy.domain.user.User;
+import com.cozy.api.dto.CreateUserDto;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
 
-  Long createUser(CreateUserDto createUserDto);
+  Long createUser(User user);
 
-  GetOneUserDto getOneUser(Long id);
+  String getEmail(String email);
+
+  String getLoginId(String userId);
+
+  User getUser(Long id);
 }
