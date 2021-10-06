@@ -24,9 +24,12 @@ dependencies {
     // MySQL connector
     runtimeOnly 'mysql:mysql-connector-java'
 
-    //lombok
+    // lombok
     implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // password encrypt
+    implementation 'org.mindrot:jbcrypt:0.4'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.h2database:h2'

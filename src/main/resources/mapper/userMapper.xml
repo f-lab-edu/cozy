@@ -4,14 +4,34 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cozy.domain.user.mapper.UserMapper">
-  <insert id="createUser">
+  <insert id="createUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
     insert into USER (login_id, password, email, phone_number)
     values (#{loginId}, #{password}, #{email}, #{phoneNumber})
   </insert>
 
-  <select id="getOneUser" resultType="GetOneUserDto">
-    select login_id, password, email, phone_number
+  <select id="getUser" resultType="User">
+    select id,
+           login_id,
+           password,
+           email,
+           phone_number,
+           created_at,
+           deleted_at,
+           updated_at,
+           is_deleted
     from USER
     WHERE ID = #{id}
+  </select>
+
+  <select id="getEmail" resultType="String">
+    select email
+    from USER
+    WHERE email = #{email}
+  </select>
+
+  <select id="getLoginId" resultType="String">
+    select login_id
+    from USER
+    WHERE login_id = #{loginId}
   </select>
 </mapper>
